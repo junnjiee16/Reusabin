@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 // import jwt from 'jsonwebtoken'
 
 const Ai = () => {
@@ -44,29 +45,27 @@ const Ai = () => {
 
 
   async function updateFile(event) {
-    console.log(event)
-    const req = await fetch("https://foursknspaihack-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/3e23020a-2da5-495a-83bf-b48b4645ff81/detect/iterations/Iteration1/image", {
-        method:"POST",
-        headers: {
-          'Prediction-Key':'fcdd642e9cf94df885f770f60ba51959',
-         'Content-Type': 'application/octet-stream',
-        },
-        body:FormData({
-            "": tempFile,
-            }),
-      });
-      const data = await req.json();
-      console.log(data)
+    event.preventDefault();
+    let File = new FormData();
+    File.append('image', tempFile);
+    const req = await axios.post('https://foursknspaihack-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/3e23020a-2da5-495a-83bf-b48b4645ff81/detect/iterations/Iteration3/image', File, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        'Prediction-Key': "fcdd642e9cf94df885f770f60ba51959"
+      }
+    })
+    
+    console.log(req.data)
 
     }
   
-
+    // useEffect(() => {console.log(tempFile)}, [tempFile])
   return (
     <div>
       <h1>Your Quote: {quote}</h1>
       <form onSubmit={updateFile}>
-      <input type="file" multiple accept="image/*"  value={tempFile}
-          onChange={(e) => setTempFile(e.target.value)} />
+      <input type="file"
+          onChange={(e) => setTempFile(e.target.files?.[0]|| null)} />
         <input type="submit" value ="Upload Image" />
       </form>
     </div>
