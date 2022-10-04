@@ -18,7 +18,6 @@ mongoose.connect(process.env.DATABASE_ACCESS, () => {
 
 app.post("/api/register", async (req, res) => {
   console.log(req.body);
-
   try {
     const user = await User.create({
       email: req.body.email,
@@ -52,21 +51,21 @@ app.post("/api/login", async (req, res) => {
 
 });
 
-app.get("/api/login", async (req, res) => {
+// app.get("/api/login", async (req, res) => {
 
-  const token = req.headers['x-access-token'];
-try{
-  const decoded = jwt.verify(token, process.env.JWT_SECRET);
-  const email = decoded.email;
-  const user = await User.findOne({email: email})
-  return {status: "ok", quote: user.quote}
-}
-catch(err){
-  console.log(err)
-  res.json({status:'error',error:'invalid email'})
-}
+//   const token = req.headers['x-access-token'];
+// try{
+//   const decoded = jwt.verify(token, process.env.JWT_SECRET);
+//   const email = decoded.email;
+//   const user = await User.findOne({email: email})
+//   return {status: "ok", quote: user.quote}
+// }
+// catch(err){
+//   console.log(err)
+//   res.json({status:'error',error:'invalid email'})
+// }
 
-});
+// });
 
 
 app.get("/api/dashboard", async (req, res) => {

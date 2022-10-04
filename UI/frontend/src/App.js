@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./pages/Header";
-import SignUp from "./pages/signup";
-import Login from "./pages/login";
-import Dashboard from "./pages/Dashboard";
-import Ai from "./pages/Ai";
+import Header from "./pages/js/Header";
+import SignUp from "./pages/js/signup";
+import Login from "./pages/js/login";
+import Dashboard from "./pages/js/Dashboard";
+import Ai from "./pages/js/Ai";
 
 const App = () => {
   return (

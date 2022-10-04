@@ -87,10 +87,6 @@ const Ai = () => {
     console.log(req.data.predictions[0])
     setPercentage(Math.round(req.data.predictions[0].probability * 100));
     setItem(req.data.predictions[0].tagName);
-
-
-    
-
     }
     
   
