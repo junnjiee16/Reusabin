@@ -15,7 +15,10 @@ const User = new mongoose.Schema({
         required: true,
         
     },
-    quote:{type:String},
+    quote:{
+        type:Number,
+        default:0
+    },
 },
     {collection:'user-data'}
 );

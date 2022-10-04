@@ -82,29 +82,53 @@ app.get("/api/dashboard", async (req, res) => {
   }
 });
 
-app.post("/api/dashboard", async (req, res) => {
+// app.post("/api/dashboard", async (req, res) => {
+//   const token = req.headers["x-access-token"];
+//   try {
+//     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+//     const email = decoded.email;
+//     const user = await User.updateOne(
+// {
+//   email: email,
+// },
+// {
+//   quote: req.body.quote,
+// }
+
+//       // { email: email },
+//       // { $set: { quote: req.body.quote } }
+//     );
+//     return { status: "ok", quote: user.quote };
+//   } catch (error) {
+//     console.log(error);
+//     res.json({ status: "error", error });
+//   }
+// });
+
+
+
+app.post("/api/increment", async (req, res) => {
+
+
   const token = req.headers["x-access-token"];
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const email = decoded.email;
     const user = await User.updateOne(
 {
-  email: email,
+  email: email
 },
 {
-  quote: req.body.quote,
+  $inc: { quote: 10 }
 }
 
-      // { email: email },
-      // { $set: { quote: req.body.quote } }
-    );
-    return { status: "ok", quote: user.quote };
+    )
+    res.json({ status: "ok", quote: user.quote });
   } catch (error) {
     console.log(error);
     res.json({ status: "error", error });
   }
 });
-
 
 app.listen(4000, () => {
   console.log("Example app listening on port 4000!");

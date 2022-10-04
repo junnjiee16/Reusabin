@@ -37,7 +37,7 @@ function logout(){
           </Typography>
           {localStorage.getItem("token")!==null ? <Button color="inherit" onClick={logout}>Logout</Button>:<Button color="inherit" onClick={routeChange}>Login</Button> }
           {localStorage.getItem("current")==="login" ? <Button color="inherit" onClick={()=>{navigate("/")}}>SignUp</Button>: null }
-          {localStorage.getItem("token")!==null ? <Button color="inherit" onClick={()=>navigate("/Dashboard")}>Dashboard</Button>:null}
+          {localStorage.getItem("token")!==null ? <Button color="inherit" onClick={()=>navigate("/Ai")}>Ai</Button>:null}
         </Toolbar>
       </AppBar>
     </Box>
