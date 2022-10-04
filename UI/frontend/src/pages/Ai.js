@@ -59,7 +59,7 @@ const Ai = () => {
     })
     
     console.log(req.data.predictions[0])
-    setPercentage(req.data.predictions[0].probability * 100);
+    setPercentage(Math.round(req.data.predictions[0].probability * 100));
     setItem(req.data.predictions[0].tagName);
     
 
@@ -76,7 +76,7 @@ const Ai = () => {
         <input type="submit" value ="Upload Image" />
       </form>
 
-      <div style={{ width: 200, height: 200 ,fontSize:10}}>
+      <div style={{ width: 200, height: 200 ,fontSize:5}}>
   <CircularProgressbar value={percentage} text={`${percentage}%` }  />
 </div>
     <h1>Predicted Item:{`${item}`}</h1>
