@@ -26,7 +26,9 @@ function SignUp() {
     })
     const data = await response.json();
     if (data.status === 'ok'){
-        navigate('/')
+        navigate('/login')
+    }else{
+      window.alert('Sign up properly please last chance hor')
     }
   }
 

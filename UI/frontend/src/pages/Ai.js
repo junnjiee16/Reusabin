@@ -1,12 +1,15 @@
 import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import axios from "axios";
 // import jwt from 'jsonwebtoken'
 
 const Ai = () => {
-
   const [quote, setQuote] = useState("");
   const [tempFile, setTempFile] = useState("");
+  const [percentage, setPercentage] = useState(0);
+  const [item, setItem] = useState("");
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -55,9 +58,13 @@ const Ai = () => {
       }
     })
     
-    console.log(req.data)
+    console.log(req.data.predictions[0])
+    setPercentage(req.data.predictions[0].probability * 100);
+    setItem(req.data.predictions[0].tagName);
+    
 
     }
+    
   
     // useEffect(() => {console.log(tempFile)}, [tempFile])
   return (
@@ -68,6 +75,13 @@ const Ai = () => {
           onChange={(e) => setTempFile(e.target.files?.[0]|| null)} />
         <input type="submit" value ="Upload Image" />
       </form>
+
+      <div style={{ width: 200, height: 200 ,fontSize:14}}>
+  <CircularProgressbar value={percentage} text={`${percentage}%` }  />
+</div>
+    <h1>Predicted Item:{`${item}`}</h1>
+
+
     </div>
   );
 };

@@ -6,6 +6,7 @@ function Login() {
   const [email, setEmail] = useState("");
   // const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  window.localStorage.setItem("current", "login");
   const navigate = useNavigate();
 
   async function loginUser(event){
@@ -28,7 +29,7 @@ function Login() {
         alert("Login Successful");
         console.log(data)
         // window.location.href = "/dashboard";
-        navigate("/dashboard");
+        navigate("/Ai");
     }else{
         alert("Login Failed");
     }
