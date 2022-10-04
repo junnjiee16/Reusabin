@@ -37,17 +37,17 @@ app.post("/api/login", async (req, res) => {
     email: req.body.email,
     password: req.body.password,
   });
-    if(user){
-      console.log(req.body)
-      const token = jwt.sign({
-        email: user.email,
-        password: user.password,
-      }, process.env.JWT_SECRET, { expiresIn: "1h" })
-      console.log(token)
-      return res.json({ status: "ok", user:true , token });
-    }else{
-      return res.json({status: "error" ,user:false});
-    }
+  if (user) {
+    console.log(req.body);
+    const token = jwt.sign({
+      email: user.email,
+      password: user.password,
+    }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    console.log(token);
+    return res.json({ status: "ok", user: true, token });
+  } else {
+    return res.json({ status: "error", user: false });
+  }
 
 });
 
@@ -107,21 +107,18 @@ app.get("/api/dashboard", async (req, res) => {
 
 
 app.post("/api/increment", async (req, res) => {
-
-
   const token = req.headers["x-access-token"];
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const email = decoded.email;
     const user = await User.updateOne(
-{
-  email: email
-},
-{
-  $inc: { quote: 10 }
-}
-
-    )
+      {
+        email: email
+      },
+      {
+        $inc: { quote: 10 }
+      }
+    );
     res.json({ status: "ok", quote: user.quote });
   } catch (error) {
     console.log(error);
