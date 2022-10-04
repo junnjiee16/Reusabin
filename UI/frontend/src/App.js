@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./pages/js/Header";
 import SignUp from "./pages/js/signup";
 import Login from "./pages/js/login";
-import Dashboard from "./pages/js/Dashboard";
 import Ai from "./pages/js/Ai";
 
 const App = () => {
@@ -13,7 +12,6 @@ const App = () => {
     <Routes>
     
     <Route path="/" element={<><Header /><SignUp /></>} />
-    <Route path="/dashboard" element={<><Header /><Dashboard /></>} />
     <Route path="/login" element={<><Header/> <Login /></>} />
     <Route path="/Ai" element={<><Header/> <Ai /></>} />
     </Routes>
