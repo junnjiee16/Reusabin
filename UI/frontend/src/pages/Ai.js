@@ -76,7 +76,7 @@ const Ai = () => {
         <input type="submit" value ="Upload Image" />
       </form>
 
-      <div style={{ width: 200, height: 200 ,fontSize:14}}>
+      <div style={{ width: 200, height: 200 ,fontSize:10}}>
   <CircularProgressbar value={percentage} text={`${percentage}%` }  />
 </div>
     <h1>Predicted Item:{`${item}`}</h1>
