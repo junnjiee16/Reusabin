@@ -22,8 +22,7 @@ def predict_image(img_path):
 
     image_file = os.path.abspath(img_path)
     print('Detecting objects in image: ' + image_file)
-    image = Image.open(image_file)
-
+    
     with open(image_file, mode="rb") as image_data:
         results = prediction_client.detect_image(ProjectID, ModelName, image_data)
 
