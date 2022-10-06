@@ -6,7 +6,10 @@ import Login from "./pages/js/login";
 import Ai from "./pages/js/Ai";
 import NotFound from "./pages/js/Notfound";
 import { ChakraProvider } from '@chakra-ui/react'
-import Home from "./pages/js/Home.tsx";
+import Hero from "./pages/js/Hero.tsx";
+import Nav from "./pages/js/Nav.tsx";
+import Stat from './pages/js/Stats.tsx'
+import Content from "./pages/js/content.tsx";
 
 const App = () => {
   return (
@@ -18,11 +21,11 @@ const App = () => {
     <Route path="/login" element={<><Header/> <Login /></>} />
     <Route path="/Ai" element={<><Header/> <Ai /></>} />
     <Route path="*" element={<NotFound />} /> */}
-    <Route path="/" element={<><Home /></>} />
+    <Route path="/" element={<><Nav /> <Hero /> <Stat /> <Content /></>} />
     <Route path="/signup" element={<><SignUp /></>} />
-    <Route path="/login" element={<> <Login /></>} />
-    <Route path="/Ai" element={<> <Ai /></>} />
-    <Route path="*" element={<NotFound />} />
+    <Route path="/login" element={<><Nav /><Login /></>} />
+    <Route path="/Ai" element={<> <Nav /> <Ai /></>} />
+    <Route path="*" element={<><Nav /><NotFound /></>} />
     </Routes>
       
     </BrowserRouter>

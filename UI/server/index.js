@@ -74,7 +74,7 @@ app.get("/api/dashboard", async (req, res) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const email = decoded.email;
     const user = await User.findOne({ email: email });
-    res.json({ status: "ok", quote: user.quote });
+    res.json({ status: "ok", quote: user.quote , name:user.username});
   } catch (error) {
     console.log(error);
     res.json({ status: "error", error });
