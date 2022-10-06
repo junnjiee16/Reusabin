@@ -154,7 +154,7 @@ export default function Nav() {
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem>Your Servers</MenuItem>
+                  <MenuItem>Dashboard</MenuItem>
                   <MenuItem>Account Settings</MenuItem>
                 </MenuList>
               </Menu>
