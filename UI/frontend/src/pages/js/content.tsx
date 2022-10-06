@@ -10,15 +10,14 @@ function content() {
       </br>
     <Tabs isFitted variant='enclosed'>
   <TabList mb='1em'>
-    <Tab>One</Tab>
-    <Tab>Two</Tab>
+    <Tab>Why should you join us?</Tab>
+    <Tab>How to get started?</Tab>
   </TabList>
   <TabPanels>
     <TabPanel>
-      <div>
+      
         <h1>Hello world</h1>
-        
-      </div>
+      
       <p>one!</p>
     </TabPanel>
     <TabPanel>
