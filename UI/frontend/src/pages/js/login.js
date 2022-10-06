@@ -62,7 +62,7 @@ function Login() {
           <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Sign in to your account</Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
-              and start earning <Link color={'blue.400'}>points!</Link> ✌️
+              and start saving our <Link color={'blue.400'}>Planet</Link> 🌎
             </Text>
           </Stack>
           <Box

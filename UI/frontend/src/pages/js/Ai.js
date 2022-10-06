@@ -4,12 +4,12 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import axios from "axios";
 
-import {
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
-} from '@chakra-ui/react'
+// import {
+//   Alert,
+//   AlertIcon,
+//   AlertTitle,
+//   AlertDescription,
+// } from '@chakra-ui/react'
 
 import { Button, ButtonGroup } from '@chakra-ui/react'
 
