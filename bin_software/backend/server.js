@@ -30,7 +30,7 @@ mongoose.connect(process.env.DATABASE_ACCESS, function successMessage() {
 //Endpoints
 app.post(
   "/api/user",
-  /*auth.verifyToken,*/
+  auth.verifyToken,
   (req, res) => {
     try {
       Webcam.capture("../images/test_picture.jpg", function (err, data) {
@@ -44,12 +44,13 @@ app.post(
             {
               headers: {
                 "Content-Type": "multipart/form-data",
-                "Prediction-Key": "fcdd642e9cf94df885f770f60ba51959",
+                "Prediction-Key": process.env.PREDICTION_KEY,
               },
             }
           )
           .then((response) => {
             if (response.data.predictions[0].probability > 0.5) {
+              console.log('good predict')
               updateQuote();
             }
 
