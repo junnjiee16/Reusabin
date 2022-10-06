@@ -23,13 +23,9 @@ import {
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import React from 'react';
 
-
-
-
-
 import { 
   AiOutlineArrowRight,
-  AiOutlineArrowLeft
+    
 } from "react-icons/ai";
 import {
   FaRobot

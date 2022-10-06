@@ -1,6 +1,7 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import React from 'react'
 
+
 function content() {
   return (
     <div>
@@ -10,20 +11,29 @@ function content() {
       </br>
     <Tabs isFitted variant='enclosed'>
   <TabList mb='1em'>
-    <Tab>One</Tab>
-    <Tab>Two</Tab>
+    <Tab>Points</Tab>
+    <Tab>Leaderboard</Tab>
+    
   </TabList>
+
   <TabPanels>
     <TabPanel>
-      <div>
-        <h1>Hello world</h1>
-        
-      </div>
-      <p>one!</p>
+      <p>5 Pungol street - Bottle (+5)</p>
+      <p>5 Pungol street - Bottle (+5)</p>
+      <p>5 Pungol street - Bottle (+5)</p>
+      <p>5 Pungol street - Bottle (+5)</p>
+      <p>5 Pungol street - Bottle (+5)</p>
     </TabPanel>
+
     <TabPanel>
-      <p>two!</p>
-    </TabPanel>
+      <h1> <b>Top Scorers</b> </h1>
+      <br></br>
+      <p>James - 500 points</p>
+      <p>Samantha - 470 points</p>
+      <p>Luke - 450 points</p>
+      <p>James - 440 points</p>
+
+    </TabPanel>   
   </TabPanels>
 </Tabs>
     </div>
