@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 import "./css/App.css";
 
 function sendUserDetails() {
-  fetch("http://localhost:8080/api/user", {
+  fetch("https://frozen-earth-85878.herokuapp.com/api/user", {
     method: "POST",
     // headers: "Bearer " + localStorage.getItem("token"),
   })

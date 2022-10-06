@@ -15,7 +15,9 @@ dotenv.config();
 //configure express app
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin:'http://localhost:3000'
+}));
 app.listen("8080", () => {
   console.log(`Bin backend listening on port 8080`);
 });
