@@ -7,7 +7,7 @@ const Webcam = require("node-webcam").create();
 const axios = require("axios");
 const FormData = require("form-data");
 const fs = require("fs");
-const auth = require("../auth/auth");
+// const auth = require("../auth/auth");
 
 //load .env file into process.env
 dotenv.config();
