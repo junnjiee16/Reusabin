@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const jwt = require("jsonwebtoken");
 const Webcam = require("node-webcam").create();
-const axios = require("axios");
+const axios = require("axios").default;
 const FormData = require("form-data");
 const fs = require("fs");
 // const auth = require("../auth/auth");
@@ -35,8 +35,7 @@ app.post(
         let File = new FormData();
         File.append("image", fs.createReadStream("../images/test_picture.jpg"));
 
-        axios
-          .post(
+        axios.post(
             "https://foursknspaihack-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/3e23020a-2da5-495a-83bf-b48b4645ff81/detect/iterations/Iteration3/image",
             File,
             {
@@ -48,7 +47,7 @@ app.post(
           )
           .then((response) => {
             if (response.data.predictions[0].probability > 0.5) {
-              updateQuote();
+              console.log('good predict')
             }
 
             console.log(response.data.predictions[0]);
