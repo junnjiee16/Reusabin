@@ -3,6 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import axios from "axios";
+
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from '@chakra-ui/react'
+
+import { Button, ButtonGroup } from '@chakra-ui/react'
+
 // import jwt from 'jsonwebtoken'
 
 const Ai = () => {
@@ -98,11 +108,13 @@ const Ai = () => {
     // useEffect(() => {console.log(tempFile)}, [tempFile])
   return (
     <div>
-      <h1>Your Quote: {quote}</h1>
-      <form onSubmit={updateFile}>
-      <input type="file"
+      <h1>Your Points: {quote}</h1>
+
+      <form >
+      <input type="file" 
           onChange={(e) => setTempFile(e.target.files?.[0]|| null)} />
-        <input type="submit" value ="Upload Image" />
+        {/* <input type="submit" value ="Upload Image" /> */}
+        <Button colorScheme='blue' onClick={updateFile}>Upload Image</Button>
       </form>
 
       <div style={{ width: 200, height: 200 ,fontSize:5}}>
