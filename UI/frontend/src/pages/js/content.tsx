@@ -11,18 +11,16 @@ function content() {
       </br>
     <Tabs isFitted variant='enclosed'>
   <TabList mb='1em'>
-    <Tab>Points</Tab>
-    <Tab>Leaderboard</Tab>
-    
+    <Tab>Why should you join us?</Tab>
+    <Tab>How to get started?</Tab>
   </TabList>
 
   <TabPanels>
     <TabPanel>
-      <p>5 Pungol street - Bottle (+5)</p>
-      <p>5 Pungol street - Bottle (+5)</p>
-      <p>5 Pungol street - Bottle (+5)</p>
-      <p>5 Pungol street - Bottle (+5)</p>
-      <p>5 Pungol street - Bottle (+5)</p>
+      
+        <h1>Hello world</h1>
+      
+      <p>one!</p>
     </TabPanel>
 
     <TabPanel>

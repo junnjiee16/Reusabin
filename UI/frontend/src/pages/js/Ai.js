@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Center, Square, Circle ,Box} from '@chakra-ui/react'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import axios from "axios";
@@ -17,6 +18,7 @@ import { Button, ButtonGroup } from '@chakra-ui/react'
 
 const Ai = () => {
   const [quote, setQuote] = useState(0);
+  const [username, setUsername] = useState("Joamma");
   const [tempQuote, setTempQuote] = useState(0);
   
   const [tempFile, setTempFile] = useState("");
@@ -107,20 +109,33 @@ const Ai = () => {
 
     // useEffect(() => {console.log(tempFile)}, [tempFile])
   return (
+    
     <div>
-      <h1>Your Points: {quote}</h1>
+      <Center>
+      <Circle size='800px' bg='purple.500' color='white'>
+        <Box>
 
-      <form >
-      <input type="file" 
-          onChange={(e) => setTempFile(e.target.files?.[0]|| null)} />
-        {/* <input type="submit" value ="Upload Image" /> */}
-        <Button colorScheme='blue' onClick={updateFile}>Upload Image</Button>
-      </form>
+        <h1>Your Points: {quote}</h1>
 
-      <div style={{ width: 200, height: 200 ,fontSize:5}}>
-  <CircularProgressbar value={percentage} text={`${percentage}%` }  />
+<form >
+<input type="file" 
+    onChange={(e) => setTempFile(e.target.files?.[0]|| null)} />
+  {/* <input type="submit" value ="Upload Image" /> */}
+  <Button colorScheme='blue' onClick={updateFile}>Upload Image</Button>
+</form>
+
+<Center>
+<div style={{ width: 200, height: 200 ,fontSize:5}}>
+<CircularProgressbar value={percentage} text={`${percentage}%` }  />
 </div>
-    <h1>Predicted Item:{`${item}`}</h1>
+</Center>
+
+<h1 >Predicted Item:{`${item}`}</h1>
+        </Box>
+      
+</Circle>
+      </Center>
+      
 
 
     </div>

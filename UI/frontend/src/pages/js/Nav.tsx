@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 
 import {useNavigate} from 'react-router-dom';
 
-
+import axios from "axios";
 import {
   Box,
   Flex,
@@ -79,6 +79,23 @@ export default function Nav() {
 
   const navigate = useNavigate();
 
+  const [username, setUsername] = useState("Joamma");
+
+  async function updateName() {
+    
+    const req = await axios.get('https://localhost:3000/api/dashboard', {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    if(req.data.username){
+      setUsername(req.data.username);
+    }
+    }
+    
+    updateName()
+
+
   function logout(){
     localStorage.removeItem("token");
     navigate("/");
@@ -133,7 +150,7 @@ export default function Nav() {
                   </Center>
                   <br />
                   <Center>
-                    <p>Username</p>
+                    <p> {`${username}`}</p>
                   </Center>
                   <br />
                   <MenuDivider />
