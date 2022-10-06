@@ -28,16 +28,15 @@ import React from 'react';
                   bg: 'blue.400',
                   zIndex: -1,
                 }}>
-                Freelance
+                Auto Recycling Bins
               </Text>
               <br />{' '}
               <Text color={'blue.400'} as={'span'}>
-                Design Projects
+                
               </Text>{' '}
             </Heading>
             <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-              The project board is an exclusive resource for contract work. It's
-              perfect for freelancers, agencies, and moonlighters.
+              Converting your trash to cash one bottle at a time!
             </Text>
             <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
               <Button
@@ -47,7 +46,7 @@ import React from 'react';
                 _hover={{
                   bg: 'blue.500',
                 }}>
-                Create Project
+                Join us now!
               </Button>
               <Button rounded={'full'}>How It Works</Button>
             </Stack>

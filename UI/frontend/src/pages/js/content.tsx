@@ -3,6 +3,7 @@ import React from 'react'
 
 
 function content() {
+
   return (
     <div>
       <br>
@@ -10,26 +11,27 @@ function content() {
       <br>
       </br>
     <Tabs isFitted variant='enclosed'>
-  <TabList mb='1em'>
+  <TabList mb='2em'>
     <Tab>Why should you join us?</Tab>
-    <Tab>How to get started?</Tab>
+    <Tab>How does it work?</Tab>
   </TabList>
 
   <TabPanels>
     <TabPanel>
-      
-        <h1>Hello world</h1>
-      
-      <p>one!</p>
+        <ul>
+        <li><h2><b>We give you money</b></h2></li>
+        <li><h2><b>Vouchers galore!</b></h2></li>
+        <li><h2><b>Vast network of savvy recyclers</b></h2></li>
+        <li><h2><b>We'll tell you where to find our bins</b></h2></li>
+        </ul>
     </TabPanel>
-
     <TabPanel>
-      <h1> <b>Top Scorers</b> </h1>
-      <br></br>
-      <p>James - 500 points</p>
-      <p>Samantha - 470 points</p>
-      <p>Luke - 450 points</p>
-      <p>James - 440 points</p>
+    <ul>
+        <li><h2><b>Just pop by to one of our bins and place a recyclable material inside
+          if its good. We give you points.</b></h2></li>
+          <li><h2><b>Points = Vouchers (Like 5% off your groceries!) </b></h2></li>
+
+        </ul>
 
     </TabPanel>   
   </TabPanels>
