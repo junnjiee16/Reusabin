@@ -1,4 +1,5 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
+import { Heading } from '@chakra-ui/react'
 import React from 'react'
 
 
@@ -36,6 +37,8 @@ function content() {
     </TabPanel>   
   </TabPanels>
 </Tabs>
+<Heading>COME RECYCLE WITH US TODAY!</Heading>
+
     </div>
   )
 }

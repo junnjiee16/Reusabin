@@ -20,7 +20,7 @@ const Ai = () => {
   const [quote, setQuote] = useState(0);
   const [username, setUsername] = useState("Joamma");
   const [tempQuote, setTempQuote] = useState(0);
-  
+
   const [tempFile, setTempFile] = useState("");
   const [percentage, setPercentage] = useState(0);
   const [item, setItem] = useState("");
@@ -52,11 +52,11 @@ const Ai = () => {
     });
     const data = await req.json();
 
-    if (data.status === "ok"){
-        setQuote(data.quote)
+    if (data.status === "ok") {
+      setQuote(data.quote);
     }
-    else{
-        alert(data.error)
+    else {
+      alert(data.error);
     }
     setQuote(data.quote);
   }
@@ -65,23 +65,23 @@ const Ai = () => {
   async function updateQuote(event) {
 
     const req = await fetch("http://localhost:4000/api/increment", {
-        method:"POST",
-        headers: {
-         'Content-Type': 'application/json',
-          "x-access-token": localStorage.getItem("token"),
-        }
-      });
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        "x-access-token": localStorage.getItem("token"),
+      }
+    });
 
-      const data = await req.json();
-      console.log(data)
-      if (data.status === "ok"){
-        alert("Points updated successfully")
-        populateQuote()
-      }else{
-          alert(data.error)
-      }  
+    const data = await req.json();
+    console.log(data);
+    if (data.status === "ok") {
+      alert("Points updated successfully");
+      populateQuote();
+    } else {
+      alert(data.error);
     }
-  
+  }
+
 
   async function updateFile(event) {
     event.preventDefault();
@@ -92,22 +92,22 @@ const Ai = () => {
         'Content-Type': 'multipart/form-data',
         'Prediction-Key': "fcdd642e9cf94df885f770f60ba51959"
       }
-    })
-    if(req.data.predictions[0].probability>0.5){
-      updateQuote()
+    });
+    if (req.data.predictions[0].probability > 0.5) {
+      updateQuote();
     }
-    console.log(req.data.predictions[0])
+    console.log(req.data.predictions[0]);
     setPercentage(Math.round(req.data.predictions[0].probability * 100));
     setItem(req.data.predictions[0].tagName);
-    }
-    
-  
+  }
 
 
 
 
 
-    // useEffect(() => {console.log(tempFile)}, [tempFile])
+
+
+  // useEffect(() => {console.log(tempFile)}, [tempFile])
   return (
     
     <div>
