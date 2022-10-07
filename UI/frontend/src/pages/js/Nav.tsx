@@ -23,13 +23,9 @@ import {
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import React from 'react';
 
-
-
-
-
 import { 
   AiOutlineArrowRight,
-  AiOutlineArrowLeft
+    
 } from "react-icons/ai";
 import {
   FaRobot
@@ -158,7 +154,7 @@ export default function Nav() {
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem>Your Servers</MenuItem>
+                  <MenuItem>Dashboard</MenuItem>
                   <MenuItem>Account Settings</MenuItem>
                 </MenuList>
               </Menu>

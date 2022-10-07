@@ -57,12 +57,12 @@ import React from 'react';
           fontSize={'4xl'}
           py={10}
           fontWeight={'bold'}>
-          Our company is expanding, you could be too.
+          Recycle with us one bottle at a time.
         </chakra.h1>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
           <StatsCard
             title={'Users'}
-            stat={'5,000'}
+            stat={'4'}
             icon={<BsPerson size={'3em'} />}
           />
           <StatsCard
