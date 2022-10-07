@@ -42,7 +42,7 @@ app.post("/api/login", async (req, res) => {
     const token = jwt.sign({
       email: user.email,
       password: user.password,
-    }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    }, process.env.JWT_SECRET, { expiresIn: "10h" });
     console.log(token);
     return res.json({ status: "ok", user: true, token });
   } else {

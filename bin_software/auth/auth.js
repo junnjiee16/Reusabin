@@ -11,7 +11,7 @@ module.exports = {
         try {
             //retrieve token from authorization header’s content
             var token = req.headers['authorization'].split('Bearer ')[1];
-            // console.log(token);
+            console.log(token);
 
             //check token
             var decoded = jwt.verify(token, process.env.JWT_SECRET);
