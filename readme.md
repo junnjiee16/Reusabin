@@ -1,3 +1,8 @@
+# Reusabin
+This is our submission for the SPAI Hackathon 2022, where we implemented a web application prototype for a recycle bin that can identify recyclables (plastic bottles, cans, etc.) using Object Detection. The idea is that users can earn points when they successfully throw a recyclable into the bin, and the points can be used to claim rewards. The object detection model prototype is trained using Azure's Custom Vision AI.
+
+
+## Starting the application
 cd to frontend 
 npm i 
 
